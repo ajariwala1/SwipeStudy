@@ -11,7 +11,7 @@ import SwiftUI
 struct SwipeStudyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FlashcardScreen()
         }
     }
 }
