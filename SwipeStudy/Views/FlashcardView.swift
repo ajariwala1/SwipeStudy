@@ -69,12 +69,12 @@ struct FlashcardView: View {
     var cardBody: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 28)
-                .fill(isAnswerShowing ? Color(red: 0.25, green: 0.24, blue: 0.34) : .white)
+                .fill(isAnswerShowing ? .black : .white)
                 .shadow(
-                    color: Color.black.opacity(0.13),
-                    radius: 24,
+                    color: .black,
+                    radius: 5,
                     x: 0,
-                    y: 12
+                    y: 2
                 )
 
             VStack(spacing: 18) {
@@ -83,8 +83,8 @@ struct FlashcardView: View {
                     .tracking(1.2)
                     .foregroundStyle(
                         isAnswerShowing
-                        ? Color(red: 0.79, green: 0.77, blue: 0.91)
-                        : Color(red: 0.44, green: 0.42, blue: 0.49)
+                        ? .white
+                        : .black
                     )
 
                 Text(isAnswerShowing ? card.answer : card.question)
@@ -93,7 +93,7 @@ struct FlashcardView: View {
                     .foregroundStyle(
                         isAnswerShowing
                         ? .white
-                        : Color(red: 0.18, green: 0.18, blue: 0.23)
+                        : .black
                     )
                     .lineSpacing(4)
             }
@@ -106,7 +106,7 @@ struct FlashcardView: View {
 
                         Image(systemName: "star.fill")
                             .font(.system(size: 34, weight: .bold))
-                            .foregroundStyle(Color(red: 1.0, green: 0.7, blue: 0.0))
+                            .foregroundStyle(Color.orange)
                     }
 
                     Spacer()
@@ -119,7 +119,7 @@ struct FlashcardView: View {
                     HStack {
                         SwipeLabelView(
                             text: "GOT IT",
-                            color: Color(red: 0.18, green: 0.68, blue: 0.4),
+                            color: .green,
                             angle: -12
                         )
 
@@ -138,7 +138,7 @@ struct FlashcardView: View {
 
                         SwipeLabelView(
                             text: "REVIEW",
-                            color: Color(red: 0.91, green: 0.36, blue: 0.46),
+                            color: .red,
                             angle: 12
                         )
                     }
